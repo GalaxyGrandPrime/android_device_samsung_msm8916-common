@@ -32,3 +32,7 @@ include $(LOCAL_PATH)/product/*.mk
 
 # Enable real time lockscreen charging current values
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
+# Bootanimation Texture & Cache
+TARGET_BOOTANIMATION_PRELOAD 	     := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE   := true
