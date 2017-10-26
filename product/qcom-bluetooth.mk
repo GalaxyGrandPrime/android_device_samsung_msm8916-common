@@ -5,5 +5,4 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-	javax.btobex \
 	libbt-vendor
