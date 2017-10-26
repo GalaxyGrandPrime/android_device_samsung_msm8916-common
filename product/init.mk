@@ -5,10 +5,8 @@ PRODUCT_PACKAGES += \
 	init.class_main.sh \
 	init.qcom.bt.sh \
 	init.qcom.uicc.sh \
-	init.qcom.post_boot.sh \
 	init.qcom.early_boot.sh \
 	init.qcom.usb.rc \
-	init.qcom.usb.sh \
 	init.qcom.rc \
 	init.qcom.fm.sh \
 	init.qcom.sh \
