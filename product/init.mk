@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
 	init.qcom.bt.sh \
 	init.qcom.uicc.sh \
 	init.qcom.early_boot.sh \
+	init.link_ril_db.sh \
 	init.qcom.usb.rc \
 	init.qcom.rc \
 	init.qcom.fm.sh \
