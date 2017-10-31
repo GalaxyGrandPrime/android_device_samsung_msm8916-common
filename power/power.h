@@ -26,15 +26,9 @@ typedef struct governor_settings {
     int is_interactive;
     int boost;
     int boostpulse_duration;
-    int go_hispeed_load;
-    int go_hispeed_load_off;
-    int hispeed_freq;
-    int hispeed_freq_off;
     int min_sample_time;
     int timer_rate;
     int above_hispeed_delay;
-    int target_loads;
-    int target_loads_off;
     int scaling_max_freq;
     int scaling_min_freq;
     int scaling_min_freq_off;
