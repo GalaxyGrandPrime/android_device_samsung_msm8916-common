@@ -38,4 +38,8 @@ typedef struct governor_settings {
     int scaling_max_freq;
     int scaling_min_freq;
     int scaling_min_freq_off;
+    int gpu_min_pwrlevel;
+    int gpu_max_pwrlevel;
+    int gpu_min_pwrlevel_off;
+    int gpu_max_pwrlevel_off;
 } power_profile;
