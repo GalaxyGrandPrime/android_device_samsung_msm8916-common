@@ -2,3 +2,4 @@ allow system_server app_efs_file:dir search;
 allow system_server efs_file:dir search;
 allow system_server vibrator_sysfs_file:dir search;
 allow system_server vibrator_sysfs_file:file rw_file_perms;
+allow system_server sysfs_thermal:file r_file_perms;
