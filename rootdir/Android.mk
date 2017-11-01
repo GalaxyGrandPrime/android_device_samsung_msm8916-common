@@ -60,6 +60,16 @@ LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
 
 ######################
+### init.qcom.rc
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.power.rc
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := etc/$(LOCAL_MODULE)
+LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)
+
+######################
 ### init.recovery.qcom.rc
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.recovery.qcom.rc

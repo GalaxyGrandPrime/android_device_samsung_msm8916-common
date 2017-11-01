@@ -9,6 +9,7 @@ PRODUCT_PACKAGES += \
 	init.link_ril_db.sh \
 	init.qcom.usb.rc \
 	init.qcom.rc \
+	init.qcom.power.rc \
 	init.qcom.fm.sh \
 	init.qcom.sh \
 	init.recovery.qcom.rc \

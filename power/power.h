@@ -26,6 +26,12 @@ typedef struct governor_settings {
     int is_interactive;
     int boost;
     int boostpulse_duration;
+    int go_hispeed_load;
+    int go_hispeed_load_off;
+    int hispeed_freq;
+    int hispeed_freq_off;
+    int target_loads;
+    int target_loads_off;
     int min_sample_time;
     int timer_rate;
     int above_hispeed_delay;
@@ -36,4 +42,5 @@ typedef struct governor_settings {
     int gpu_max_pwrlevel;
     int gpu_min_pwrlevel_off;
     int gpu_max_pwrlevel_off;
+    int gpu_default_pwrlevel;
 } power_profile;

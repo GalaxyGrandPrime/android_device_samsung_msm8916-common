@@ -99,19 +99,35 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
     }
 	
     if (on) {
+        sysfs_write_int(INTERACTIVE_PATH "hispeed_freq",
+                        profiles[current_power_profile].hispeed_freq);
+        sysfs_write_int(INTERACTIVE_PATH "go_hispeed_load",
+                        profiles[current_power_profile].go_hispeed_load);
+        sysfs_write_int(INTERACTIVE_PATH "target_loads",
+                        profiles[current_power_profile].target_loads);
         sysfs_write_int(CPUFREQ_PATH "scaling_min_freq",
                         profiles[current_power_profile].scaling_min_freq);
         sysfs_write_int(GPU_PWR_PATH "min_pwrlevel",
                         profiles[current_power_profile].gpu_min_pwrlevel);
         sysfs_write_int(GPU_PWR_PATH "max_pwrlevel",
                         profiles[current_power_profile].gpu_max_pwrlevel);
+        sysfs_write_int(GPU_PWR_PATH "default_pwrlevel",
+                        profiles[current_power_profile].gpu_default_pwrlevel);
     } else {
+        sysfs_write_int(INTERACTIVE_PATH "hispeed_freq",
+                        profiles[current_power_profile].hispeed_freq_off);
+        sysfs_write_int(INTERACTIVE_PATH "go_hispeed_load",
+                        profiles[current_power_profile].go_hispeed_load_off);
+        sysfs_write_int(INTERACTIVE_PATH "target_loads",
+                        profiles[current_power_profile].target_loads_off);
         sysfs_write_int(CPUFREQ_PATH "scaling_min_freq",
                         profiles[current_power_profile].scaling_min_freq_off);
         sysfs_write_int(GPU_PWR_PATH "min_pwrlevel",
                         profiles[current_power_profile].gpu_min_pwrlevel_off);
         sysfs_write_int(GPU_PWR_PATH "max_pwrlevel",
                         profiles[current_power_profile].gpu_max_pwrlevel_off);
+        sysfs_write_int(GPU_PWR_PATH "default_pwrlevel",
+                        profiles[current_power_profile].gpu_default_pwrlevel);
     }
 }
 
@@ -131,12 +147,18 @@ static void set_power_profile(int profile)
                     profiles[profile].boost);
     sysfs_write_int(INTERACTIVE_PATH "boostpulse_duration",
                     profiles[profile].boostpulse_duration);
+    sysfs_write_int(INTERACTIVE_PATH "go_hispeed_load",
+                    profiles[profile].go_hispeed_load);
+    sysfs_write_int(INTERACTIVE_PATH "hispeed_freq",
+                    profiles[profile].hispeed_freq);
     sysfs_write_int(INTERACTIVE_PATH "min_sample_time",
                     profiles[profile].min_sample_time);
     sysfs_write_int(INTERACTIVE_PATH "timer_rate",
                     profiles[profile].timer_rate);
     sysfs_write_int(INTERACTIVE_PATH "above_hispeed_delay",
                     profiles[profile].above_hispeed_delay);
+    sysfs_write_int(INTERACTIVE_PATH "target_loads",
+                    profiles[profile].target_loads);
     sysfs_write_int(CPUFREQ_PATH "scaling_max_freq",
                     profiles[profile].scaling_max_freq);
     sysfs_write_int(CPUFREQ_PATH "scaling_min_freq",
@@ -145,6 +167,8 @@ static void set_power_profile(int profile)
                     profiles[profile].gpu_min_pwrlevel);
     sysfs_write_int(GPU_PWR_PATH "max_pwrlevel",
                     profiles[profile].gpu_max_pwrlevel);
+        sysfs_write_int(GPU_PWR_PATH "default_pwrlevel",
+                        profiles[current_power_profile].gpu_default_pwrlevel);
 
     current_power_profile = profile;
 }
