@@ -1,0 +1,5 @@
+allow fsck_untrusted modem_efs_partition_device:blk_file { getattr read write };
+allow fsck_untrusted system_block_device:blk_file { getattr };
+allow fsck_untrusted loop_device:blk_file { getattr read write };
+allow fsck_untrusted media_rw_data_file:dir { getattr read write search };
+allow fsck_untrusted mnt_media_rw_file:dir { getattr read write search };
