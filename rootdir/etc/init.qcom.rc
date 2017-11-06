@@ -827,14 +827,6 @@ service qcom-sh /system/bin/sh /init.qcom.sh
     user root
     oneshot
 
-# Enable Touch Devices
-    write /sys/class/touch_key/control manual
-    write /sys/class/touch_key/enabled true
-    write /sys/class/touch_key/control auto
-    write /sys/class/touch_screen/control manual
-    write /sys/class/touch_screen/enabled true
-    write /sys/class/touch_screen/control auto
-
 service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     class late_start
     user root
